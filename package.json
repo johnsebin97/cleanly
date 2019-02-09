@@ -1,0 +1,52 @@
+{
+  "name": "cleanly",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node node_modules/react-native/local-cli/cli.js start",
+    "react-native-debugger": "/Applications/'React Native Debugger.app'/Contents/MacOS/'React Native Debugger'",
+    "test:cov": "jest --coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
+    "start:ios": "yarn start & yarn react-native-debugger & react-native run-ios",
+    "start:android": "yarn start & yarn react-native-debugger & react-native run-android",
+    "setup": "yarn install && react-native link",
+    "test": "jest",
+    "test:dev": "jest --watchAll"
+  },
+  "dependencies": {
+    "immutable": "3.8.2",
+    "native-base": "2.8.0",
+    "react": "16.4.2",
+    "react-native": "0.56.0",
+    "react-native-camera": "git+https://git@github.com/react-native-community/react-native-camera",
+    "react-native-google-signin": "1.0.0-rc3",
+    "react-native-maps": "0.21.0",
+    "react-native-router-flux": "4.0.1",
+    "react-native-snap-carousel": "3.7.2",
+    "react-redux": "5.0.7",
+    "redux": "4.0.0",
+    "redux-create-reducer": "1.1.2",
+    "redux-devtools-extension": "2.13.5",
+    "redux-logger": "3.0.6",
+    "redux-persist": "5.10.0",
+    "redux-persist-transform-immutable": "5.0.0",
+    "redux-thunk": "2.3.0"
+  },
+  "devDependencies": {
+    "babel-jest": "23.4.2",
+    "babel-preset-react-native": "^5",
+    "coveralls": "3.0.2",
+    "faker": "4.1.0",
+    "jest": "23.5.0",
+    "jest-immutable-matchers": "2.0.1",
+    "react-test-renderer": "16.4.2"
+  },
+  "jest": {
+    "preset": "react-native",
+    "testMatch": [
+      "**/test/**/*-test.js"
+    ],
+    "transform": {
+      "^.+\\.js$": "<rootDir>/node_modules/react-native/jest/preprocessor.js"
+    }
+  }
+}
